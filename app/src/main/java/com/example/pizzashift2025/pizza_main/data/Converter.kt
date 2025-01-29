@@ -10,8 +10,9 @@ import com.example.pizzashift2025.pizza_main.domain.model.Dough
 import com.example.pizzashift2025.pizza_main.domain.model.Ingredient
 import com.example.pizzashift2025.pizza_main.domain.model.Size
 import com.example.pizzashift2025.pizza_main.domain.model.Topping
+import javax.inject.Inject
 
-class Converter {
+class Converter @Inject constructor() {
 
     fun catalogItemDtoToDomain(model: CatalogItemDto?): CatalogItem {
         return CatalogItem(
