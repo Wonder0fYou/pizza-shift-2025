@@ -2,6 +2,7 @@ package com.example.pizzashift2025
 
 import android.app.Application
 import com.example.pizzashift2025.di.AppComponent
+import com.example.pizzashift2025.di.DaggerAppComponent
 
 class PizzaApplication: Application() {
 
@@ -9,8 +10,9 @@ class PizzaApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        appComponent = DaggerAppComponent.factory.create(
+        appComponent = DaggerAppComponent.factory().create(
             this, applicationContext
         )
+        appComponent.inject(this)
     }
 }

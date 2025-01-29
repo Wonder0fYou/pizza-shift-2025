@@ -1,4 +1,4 @@
-package com.example.pizzashift2025.di
+package com.example.pizzashift2025.utils
 
 import javax.inject.Scope
 
