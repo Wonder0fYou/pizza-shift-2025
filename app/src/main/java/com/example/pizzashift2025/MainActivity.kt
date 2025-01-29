@@ -4,44 +4,31 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.runtime.CompositionLocalProvider
+import com.example.pizzashift2025.di.LocalViewModelFactory
+import com.example.pizzashift2025.di.ViewModelFactory
+import com.example.pizzashift2025.pizza_main.ui.PizzaMainScreen
 import com.example.pizzashift2025.ui.theme.PizzaShift2025Theme
+import javax.inject.Inject
 
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val appComponent = (application as PizzaApplication).appComponent
+        appComponent.inject(this)
+
         enableEdgeToEdge()
         setContent {
-            PizzaShift2025Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+            CompositionLocalProvider(LocalViewModelFactory provides viewModelFactory) {
+                PizzaShift2025Theme {
+                    PizzaMainScreen()
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PizzaShift2025Theme {
-        Greeting("Android")
     }
 }

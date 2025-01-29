@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PizzaShift2025</string>
+    <string name="error_title" translatable="true">Error has occurred</string>
+    <string name="error_try_again" translatable="true">Error, try again</string>
+    <string name="error_unknown_error" translatable="true">Unknown error</string>
+    <string name="pizza" translatable="true">Pizza</string>
+    <string name="pizza_catalog_empty" translatable="true">Pizza catalog is empty</string>
 </resources>
