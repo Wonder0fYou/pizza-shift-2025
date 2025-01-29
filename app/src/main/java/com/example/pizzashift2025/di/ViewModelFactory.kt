@@ -1,5 +1,6 @@
 package com.example.pizzashift2025.di
 
+import androidx.compose.runtime.compositionLocalOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import javax.inject.Inject
@@ -12,4 +13,8 @@ class ViewModelFactory @Inject constructor(
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return viewModelProviders[modelClass]?.get() as T
     }
+}
+
+val LocalViewModelFactory = compositionLocalOf<ViewModelFactory> {
+    error("No ViewModelFactory provided")
 }

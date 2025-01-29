@@ -7,7 +7,6 @@ import com.example.pizzashift2025.PizzaApplication
 import com.example.pizzashift2025.navigation.di.NavigationModule
 import com.example.pizzashift2025.pizza_main.di.NetworkPizzaMainModule
 import com.example.pizzashift2025.pizza_main.di.RepositoryPizzaMainModule
-import com.example.pizzashift2025.pizza_main.di.ViewModelPizzaMainModule
 import com.example.pizzashift2025.utils.ApplicationScope
 import dagger.BindsInstance
 import dagger.Component
@@ -18,7 +17,7 @@ import dagger.Component
         NetworkPizzaMainModule::class,
         RepositoryPizzaMainModule::class,
         NavigationModule::class,
-        ViewModelPizzaMainModule::class
+        ViewModelModule:: class
     ]
 )
 @ApplicationScope

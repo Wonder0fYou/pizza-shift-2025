@@ -1,5 +1,5 @@
 package com.example.pizzashift2025.pizza_main.presentation
 
-interface MainRouter {
-    fun openListPizza()
+interface MainListRouter {
+    fun openPizza(id: Int?)
 }

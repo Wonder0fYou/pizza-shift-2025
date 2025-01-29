@@ -4,10 +4,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.example.pizzashift2025.pizza_main.presentation.PizzaMainScreen
+import androidx.compose.runtime.CompositionLocalProvider
+import com.example.pizzashift2025.di.LocalViewModelFactory
+import com.example.pizzashift2025.di.ViewModelFactory
+import com.example.pizzashift2025.pizza_main.ui.PizzaMainScreen
 import com.example.pizzashift2025.ui.theme.PizzaShift2025Theme
+import javax.inject.Inject
 
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -16,8 +24,10 @@ class MainActivity : ComponentActivity() {
 
         enableEdgeToEdge()
         setContent {
-            PizzaShift2025Theme {
-                PizzaMainScreen()
+            CompositionLocalProvider(LocalViewModelFactory provides viewModelFactory) {
+                PizzaShift2025Theme {
+                    PizzaMainScreen()
+                }
             }
         }
     }
