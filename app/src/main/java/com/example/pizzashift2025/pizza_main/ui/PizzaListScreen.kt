@@ -1,6 +1,5 @@
 package com.example.pizzashift2025.pizza_main.ui
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -97,11 +96,7 @@ private fun PizzaItemCard(
         modifier = Modifier
             .fillMaxWidth()
             .clickable {
-                pizza.id
-                    ?.toIntOrNull()
-                    .let { id ->
-                        onItemClicked(id)
-                    }
+                onItemClicked(pizza.id.toInt())
             }
             .padding(8.dp)
     ){
@@ -113,16 +108,16 @@ private fun PizzaItemCard(
         Spacer(modifier = Modifier.width(16.dp))
         Column {
             Text(
-                text = pizza.name ?: "",
+                text = pizza.name,
                 fontSize = 18.sp
             )
             Text(
-                text = pizza.description ?: "",
+                text = pizza.description,
                 fontSize = 14.sp,
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = "от нужно дописать ₽",
+                text = "от ${pizza.sizes[0].price} ₽",
                 fontSize = 16.sp
             )
         }

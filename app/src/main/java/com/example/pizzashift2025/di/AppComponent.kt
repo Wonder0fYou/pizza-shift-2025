@@ -26,10 +26,8 @@ interface AppComponent {
     @Component.Factory
     interface Factory {
         fun create(
-            @BindsInstance app: Application,
-            @BindsInstance context: Context
+            @BindsInstance app: Application
         ): AppComponent
     }
-    fun inject(app: PizzaApplication)
     fun inject(activity: MainActivity)
 }

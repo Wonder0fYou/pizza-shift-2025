@@ -2,6 +2,7 @@ package com.example.pizzashift2025.pizza_main.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.pizzashift2025.pizza_main.data.network.api.Result
 import com.example.pizzashift2025.pizza_main.domain.usecase.GetAllPizzaUseCase
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -10,7 +11,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class PizzaListMainViewModel @Inject constructor(
-    private val mainUseCase: GetAllPizzaUseCase,
+    private val getPizzaUseCase: GetAllPizzaUseCase,
     private val router: MainListRouter
 ): ViewModel() {
 
@@ -25,8 +26,15 @@ class PizzaListMainViewModel @Inject constructor(
         viewModelScope.launch {
             _state.value = PizzaListMainState.Loading
             try {
-                val catalog = mainUseCase()
-                _state.value = PizzaListMainState.Content(catalog)
+                when(val catalog = getPizzaUseCase()) {
+                    is Result.Success -> {
+                        _state.value = PizzaListMainState.Content(catalog.data)
+                    }
+                    is Result.Error -> {
+                        val message = catalog.reason
+                        _state.value = PizzaListMainState.Failure(message)
+                    }
+                }
             } catch (ce: CancellationException) {
                 throw ce
             } catch (e: Exception) {

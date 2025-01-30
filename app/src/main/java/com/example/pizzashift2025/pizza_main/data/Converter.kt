@@ -10,60 +10,61 @@ import com.example.pizzashift2025.pizza_main.domain.model.Dough
 import com.example.pizzashift2025.pizza_main.domain.model.Ingredient
 import com.example.pizzashift2025.pizza_main.domain.model.Size
 import com.example.pizzashift2025.pizza_main.domain.model.Topping
+import com.example.pizzashift2025.utils.Constants.BASE_URL
 import javax.inject.Inject
 
 class Converter @Inject constructor() {
 
-    fun catalogItemDtoToDomain(model: CatalogItemDto?): CatalogItem {
+    fun catalogItemDtoToDomain(model: CatalogItemDto): CatalogItem {
         return CatalogItem(
-            id = model?.id,
-            name = model?.name,
-            ingredients = model?.ingredients?.map { ingredientDtoToDomain(it) },
-            toppings = model?.toppings?.map { toppingsDtoToDomain(it) },
-            description = model?.description,
-            sizes = model?.sizes?.map { sizesDtoToDomain(it) },
-            doughs = model?.doughs?.map { doughDtoToDomain(it) },
-            calories = model?.calories,
-            protein = model?.protein,
-            totalFat = model?.totalFat,
-            carbohydrates = model?.carbohydrates,
-            sodium = model?.sodium,
-            allergens = model?.allergens,
-            isVegetarian = model?.isVegetarian,
-            isGlutenFree = model?.isGlutenFree,
-            isNew = model?.isNew,
-            isHit = model?.isHit,
-            img = model?.img
+            id = model.id,
+            name = model.name,
+            ingredients = model.ingredients.map { ingredientDtoToDomain(it) },
+            toppings = model.toppings.map { toppingsDtoToDomain(it) },
+            description = model.description,
+            sizes = model.sizes.map { sizesDtoToDomain(it) },
+            doughs = model.doughs.map { doughDtoToDomain(it) },
+            calories = model.calories,
+            protein = model.protein,
+            totalFat = model.totalFat,
+            carbohydrates = model.carbohydrates,
+            sodium = model.sodium,
+            allergens = model.allergens,
+            isVegetarian = model.isVegetarian,
+            isGlutenFree = model.isGlutenFree,
+            isNew = model.isNew,
+            isHit = model.isHit,
+            img = BASE_URL + model.img
         )
     }
 
-    private fun ingredientDtoToDomain(model: IngredientDto?): Ingredient {
+    private fun ingredientDtoToDomain(model: IngredientDto): Ingredient {
         return Ingredient(
-            name = model?.name,
-            cost = model?.cost,
-            img = model?.img
+            name = model.name,
+            cost = model.cost,
+            img = model.img
         )
     }
 
-    private fun toppingsDtoToDomain(model: ToppingDto?): Topping {
+    private fun toppingsDtoToDomain(model: ToppingDto): Topping {
         return Topping(
-            name = model?.name,
-            cost = model?.cost,
-            img = model?.img
+            name = model.name,
+            cost = model.cost,
+            img = model.img
         )
     }
 
-    private fun sizesDtoToDomain(model: SizeDto?): Size {
+    private fun sizesDtoToDomain(model: SizeDto): Size {
         return Size(
-            name = model?.name,
-            price = model?.price
+            name = model.name,
+            price = model.price
         )
     }
 
-    private fun doughDtoToDomain(model: DoughDto?): Dough {
+    private fun doughDtoToDomain(model: DoughDto): Dough {
         return Dough(
-            name = model?.name,
-            price = model?.price
+            name = model.name,
+            price = model.price
         )
     }
 }

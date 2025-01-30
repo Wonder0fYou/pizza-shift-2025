@@ -11,8 +11,7 @@ class PizzaApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         appComponent = DaggerAppComponent.factory().create(
-            this, applicationContext
+            this
         )
-        appComponent.inject(this)
     }
 }
