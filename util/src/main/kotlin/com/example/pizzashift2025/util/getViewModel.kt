@@ -1,11 +1,10 @@
-package com.example.pizzashift2025.utils
+package com.example.pizzashift2025.util
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
-import com.example.pizzashift2025.di.LocalViewModelFactory
 
 @Composable
 inline fun <reified VM: ViewModel> getViewModel(): VM {

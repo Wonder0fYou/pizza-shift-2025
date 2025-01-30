@@ -1,4 +1,4 @@
-package com.example.pizzashift2025.utils
+package com.example.pizzashift2025.util
 
 object Constants {
     const val BASE_URL = "https://shift-intensive.ru/api/"

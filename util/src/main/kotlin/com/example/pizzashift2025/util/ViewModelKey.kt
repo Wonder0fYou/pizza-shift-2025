@@ -1,4 +1,4 @@
-package com.example.pizzashift2025.di
+package com.example.pizzashift2025.util
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey

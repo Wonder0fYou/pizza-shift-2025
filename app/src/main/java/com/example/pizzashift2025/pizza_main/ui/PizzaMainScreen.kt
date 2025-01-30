@@ -11,7 +11,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.pizzashift2025.pizza_main.presentation.MainListRoute
 import com.example.pizzashift2025.pizza_main.presentation.MainViewModel
-import com.example.pizzashift2025.utils.getViewModel
+import com.example.pizzashift2025.util.getViewModel
 
 @Composable
 fun PizzaMainScreen() {

@@ -1,36 +1,20 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.jetbrains.kotlin.serialization)
     alias(libs.plugins.kotlin.kapt)
 }
 
 android {
-    namespace = "com.example.pizzashift2025"
+    namespace = "com.example.pizzashift2025.util"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.pizzashift2025"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -52,7 +36,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":util"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -64,14 +47,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.lifecycle.viewmodel.compose.android)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-    // Serialization
-    implementation(libs.kotlinx.serialization.json)
-
-    // Navigation
-    implementation(libs.androidx.navigation.compose)
 
     // Kotlin Coroutines
     implementation(libs.kotlinx.coroutines.core)
@@ -80,15 +58,4 @@ dependencies {
     // Dagger
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
-
-    //Retrofit
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-
-    // OkHttp
-    implementation (libs.okhttp)
-    implementation(libs.logging.interceptor)
-
-    // Coil Compose
-    implementation (libs.coil.kt.coil.compose)
 }
