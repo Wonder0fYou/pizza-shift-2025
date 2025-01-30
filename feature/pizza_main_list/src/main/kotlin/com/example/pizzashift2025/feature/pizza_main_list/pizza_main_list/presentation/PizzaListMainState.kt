@@ -1,4 +1,4 @@
-package com.example.pizzashift2025.pizza_main.presentation
+package com.example.pizzashift2025.feature.pizza_main_list.pizza_main_list.presentation
 
 import com.example.pizzashift2025.shared.pizza.domain.model.CatalogItem
 

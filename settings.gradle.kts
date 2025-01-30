@@ -24,4 +24,5 @@ include(":app")
 include(":util")
 include(":design:resources")
 include(":shared:pizza")
+include(":feature:pizza_main_list")
  

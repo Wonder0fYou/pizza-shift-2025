@@ -1,4 +1,4 @@
-package com.example.pizzashift2025.pizza_main.ui
+package com.example.pizzashift2025.feature.pizza_main_list.pizza_main_list.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -28,10 +28,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
-import com.example.pizzashift2025.R
+import com.example.pizzashift2025.feature.pizza_main_list.R
 import com.example.pizzashift2025.shared.pizza.domain.model.CatalogItem
-import com.example.pizzashift2025.pizza_main.presentation.PizzaListMainState
-import com.example.pizzashift2025.pizza_main.presentation.PizzaListMainViewModel
+import com.example.pizzashift2025.feature.pizza_main_list.pizza_main_list.presentation.PizzaListMainState
+import com.example.pizzashift2025.feature.pizza_main_list.pizza_main_list.presentation.PizzaListMainViewModel
 
 @Composable
 fun PizzaListScreen(

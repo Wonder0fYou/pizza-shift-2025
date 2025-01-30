@@ -1,4 +1,4 @@
-package com.example.pizzashift2025.pizza_main.presentation
+package com.example.pizzashift2025.presentation
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -9,9 +9,11 @@ class MainViewModel @Inject constructor(
     private val router: MainRouter
 ): ViewModel() {
 
-    private val _state = MutableStateFlow(MainState(
+    private val _state = MutableStateFlow(
+        MainState(
         NavigationOption.entries,
         NavigationOption.CATALOG
-    ))
+    )
+    )
     val state: StateFlow<MainState> = _state
 }
