@@ -1,6 +1,6 @@
 package com.example.pizzashift2025.pizza_main.presentation
 
-import com.example.pizzashift2025.pizza_main.domain.model.CatalogItem
+import com.example.pizzashift2025.shared.pizza.domain.model.CatalogItem
 
 sealed interface PizzaListMainState {
 

@@ -23,4 +23,5 @@ rootProject.name = "PizzaShift2025"
 include(":app")
 include(":util")
 include(":design:resources")
+include(":shared:pizza")
  

@@ -3,8 +3,7 @@ package com.example.pizzashift2025.di
 import android.app.Application
 import com.example.pizzashift2025.MainActivity
 import com.example.pizzashift2025.navigation.di.NavigationModule
-import com.example.pizzashift2025.pizza_main.di.NetworkPizzaMainModule
-import com.example.pizzashift2025.pizza_main.di.RepositoryPizzaMainModule
+import com.example.pizzashift2025.shared.pizza.di.RepositoryPizzaMainModule
 import com.example.pizzashift2025.util.ApplicationScope
 import com.example.pizzashift2025.util.ViewModelFactory
 import dagger.BindsInstance

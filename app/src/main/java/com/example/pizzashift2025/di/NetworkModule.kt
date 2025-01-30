@@ -1,6 +1,6 @@
 package com.example.pizzashift2025.di
 
-import com.example.pizzashift2025.pizza_main.di.NetworkPizzaMainModule
+import com.example.pizzashift2025.shared.pizza.di.NetworkPizzaMainModule
 import com.example.pizzashift2025.util.ApplicationScope
 import com.example.pizzashift2025.util.Constants
 import dagger.Module

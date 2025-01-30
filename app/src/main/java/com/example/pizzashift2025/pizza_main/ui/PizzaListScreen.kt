@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import com.example.pizzashift2025.R
-import com.example.pizzashift2025.pizza_main.domain.model.CatalogItem
+import com.example.pizzashift2025.shared.pizza.domain.model.CatalogItem
 import com.example.pizzashift2025.pizza_main.presentation.PizzaListMainState
 import com.example.pizzashift2025.pizza_main.presentation.PizzaListMainViewModel
 

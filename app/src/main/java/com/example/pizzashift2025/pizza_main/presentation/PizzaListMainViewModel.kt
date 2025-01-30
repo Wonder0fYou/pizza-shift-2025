@@ -2,8 +2,8 @@ package com.example.pizzashift2025.pizza_main.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.pizzashift2025.pizza_main.data.network.api.Result
-import com.example.pizzashift2025.pizza_main.domain.usecase.GetAllPizzaUseCase
+import com.example.pizzashift2025.shared.pizza.data.network.api.Result
+import com.example.pizzashift2025.shared.pizza.domain.usecase.GetAllPizzaUseCase
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
