@@ -5,9 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.CompositionLocalProvider
-import com.example.pizzashift2025.di.LocalViewModelFactory
-import com.example.pizzashift2025.di.ViewModelFactory
-import com.example.pizzashift2025.pizza_main.ui.PizzaMainScreen
+import com.example.pizzashift2025.ui.PizzaMainScreen
+import com.example.pizzashift2025.util.LocalViewModelFactory
+import com.example.pizzashift2025.util.ViewModelFactory
 import com.example.pizzashift2025.ui.theme.PizzaShift2025Theme
 import javax.inject.Inject
 

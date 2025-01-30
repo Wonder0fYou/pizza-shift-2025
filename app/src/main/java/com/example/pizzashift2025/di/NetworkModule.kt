@@ -1,7 +1,8 @@
 package com.example.pizzashift2025.di
 
-import com.example.pizzashift2025.utils.ApplicationScope
-import com.example.pizzashift2025.utils.Constants
+import com.example.pizzashift2025.shared.pizza.di.NetworkPizzaMainModule
+import com.example.pizzashift2025.util.ApplicationScope
+import com.example.pizzashift2025.util.Constants
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -9,7 +10,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-@Module
+@Module(
+    includes = [
+        NetworkPizzaMainModule::class,
+    ]
+)
 interface NetworkModule {
     companion object {
 
