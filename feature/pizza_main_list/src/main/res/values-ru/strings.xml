@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">PizzaShift2025</string>
-    <string name="error_title">Произошла ошибка</string>
-    <string name="error_try_again">Ошибка, попробуйте еще раз</string>
     <string name="error_unknown_error">Неизвестная ошибка</string>
     <string name="pizza">Пицца</string>
     <string name="pizza_catalog_empty">Каталог пицц пуст</string>

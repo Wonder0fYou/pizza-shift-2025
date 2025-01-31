@@ -28,6 +28,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
+import com.example.pizzashift2025.component.ui.ErrorComponent
+import com.example.pizzashift2025.component.ui.LoadingComponent
 import com.example.pizzashift2025.feature.pizza_main_list.R
 import com.example.pizzashift2025.shared.pizza.domain.model.CatalogItem
 import com.example.pizzashift2025.feature.pizza_main_list.pizza_main_list.presentation.PizzaListMainState
@@ -136,26 +138,4 @@ private fun TopBar() {
             fontSize = 24.sp
         )
     }
-}
-
-@Composable
-private fun LoadingComponent() {
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        CircularProgressIndicator()
-    }
-}
-
-@Composable
-private fun ErrorComponent(message: String, onRetry: () -> Unit) {
-    AlertDialog(
-        onDismissRequest = {},
-        title = { Text(text = stringResource(id = R.string.error_title)) },
-        text = { Text(text = message) },
-        confirmButton = {
-            Button(onClick = onRetry) {
-                Text(text = stringResource(id = R.string.error_try_again))
-            }
-        },
-        modifier = Modifier,
-    )
 }

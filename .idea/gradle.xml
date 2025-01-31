@@ -10,6 +10,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/component" />
+            <option value="$PROJECT_DIR$/component/ui" />
             <option value="$PROJECT_DIR$/design" />
             <option value="$PROJECT_DIR$/design/resources" />
             <option value="$PROJECT_DIR$/feature" />

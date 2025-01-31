@@ -38,6 +38,7 @@ android {
 dependencies {
     implementation(project(":shared:pizza"))
     implementation(project(":util"))
+    implementation(project(":component:ui"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

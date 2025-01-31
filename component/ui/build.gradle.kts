@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.pizzashift2025.feature.pizza_details"
+    namespace = "com.example.pizzashift2025.component.ui"
     compileSdk = 35
 
     defaultConfig {
@@ -36,14 +36,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":shared:pizza"))
-    implementation(project(":util"))
-    implementation(project(":component:ui"))
-
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.compose.android)
-    implementation(libs.androidx.lifecycle.runtime.compose.android)
 
     // Compose
     implementation(libs.androidx.activity.compose)
@@ -52,20 +44,4 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
-
-    // Serialization
-    implementation(libs.kotlinx.serialization.json)
-
-    // Kotlin Coroutines
-    implementation(libs.kotlinx.coroutines.core)
-    implementation (libs.kotlinx.coroutines.android)
-
-    // Dagger
-    implementation(libs.dagger)
-    kapt(libs.dagger.compiler)
-
-    // Coil Compose
-    implementation (libs.coil.kt.coil.compose)
 }
