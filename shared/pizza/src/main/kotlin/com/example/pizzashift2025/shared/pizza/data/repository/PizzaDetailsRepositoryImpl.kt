@@ -10,10 +10,10 @@ class PizzaDetailsRepositoryImpl @Inject constructor(
     private val api: PizzaApiService,
     private val converter: Converter
 ): PizzaDetailsRepository {
-    override suspend fun getCurrentPizza(id: Int): CatalogItem {
+    override suspend fun getCurrentPizza(id: String): CatalogItem {
         val catalog = api.getAllPizzaList().catalog.map { dto ->
             converter.catalogItemDtoToDomain(dto)
         }
-        return catalog[id]
+        return catalog[id.toInt()]
     }
 }

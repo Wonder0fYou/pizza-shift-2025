@@ -8,7 +8,7 @@ import javax.inject.Inject
 class MainListRouterImpl @Inject constructor(
     private val globalRouter: GlobalRouter
 ): MainListRouter {
-    override fun openPizza(id: Int?) {
+    override fun openPizza(id: String) {
         if (id != null) {
             globalRouter.open(PizzaDetailsRoute(id))
         }

@@ -7,7 +7,7 @@ import javax.inject.Inject
 class GetCurrentPizzaDetails @Inject constructor(
     private val pizzaDetails: PizzaDetailsRepository
 ) {
-   suspend operator fun invoke(id: Int): CatalogItem {
+   suspend operator fun invoke(id: String): CatalogItem {
        return pizzaDetails.getCurrentPizza(id)
    }
 }

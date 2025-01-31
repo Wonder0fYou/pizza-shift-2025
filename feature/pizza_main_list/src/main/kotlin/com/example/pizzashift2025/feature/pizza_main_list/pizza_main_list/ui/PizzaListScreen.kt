@@ -67,7 +67,7 @@ fun PizzaListScreen(
 @Composable
 private fun ContentComponent(
     catalogs: List<CatalogItem>?,
-    onItemClicked: (id: Int?) -> Unit
+    onItemClicked: (id: String) -> Unit
 ) {
     if (catalogs == null) {
         Text(text = stringResource(id = R.string.pizza_catalog_empty))
@@ -92,13 +92,13 @@ private fun ContentComponent(
 @Composable
 private fun PizzaItemCard(
     pizza: CatalogItem,
-    onItemClicked: (id: Int?) -> Unit
+    onItemClicked: (id: String) -> Unit
 ) {
     Row (
         modifier = Modifier
             .fillMaxWidth()
             .clickable {
-                onItemClicked(pizza.id.toInt())
+                onItemClicked(pizza.id)
             }
             .padding(8.dp)
     ){

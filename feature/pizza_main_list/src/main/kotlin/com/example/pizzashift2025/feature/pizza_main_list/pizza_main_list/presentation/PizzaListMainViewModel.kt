@@ -2,7 +2,7 @@ package com.example.pizzashift2025.feature.pizza_main_list.pizza_main_list.prese
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.pizzashift2025.shared.pizza.data.network.api.Result
+import com.example.pizzashift2025.util.Result
 import com.example.pizzashift2025.shared.pizza.domain.usecase.GetAllPizzaUseCase
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -43,7 +43,7 @@ class PizzaListMainViewModel @Inject constructor(
         }
     }
 
-    fun openPizza(pizzaId: Int?) {
+    fun openPizza(pizzaId: String) {
         router.openPizza(pizzaId)
     }
 }

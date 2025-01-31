@@ -17,7 +17,7 @@ class PizzaDetailsViewModel @Inject constructor(
     private val _state = MutableStateFlow<PizzaDetailsState>(PizzaDetailsState.Initial)
     val state: StateFlow<PizzaDetailsState> = _state
 
-    fun loadPizza(pizzaId: Int) {
+    fun loadPizza(pizzaId: String) {
         if (_state.value is PizzaDetailsState.Content || _state.value is PizzaDetailsState.Loading) {
             return
         }
