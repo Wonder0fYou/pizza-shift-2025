@@ -11,14 +11,14 @@ val Typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
+        fontSize = 18.sp,
         lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
+        letterSpacing = 0.sp
     ),
     titleLarge = TextStyle( // Стиль для заголовков
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Bold,
-        fontSize = 22.sp,
+        fontSize = 32.sp,
         lineHeight = 28.sp,
         letterSpacing = 0.sp,
         color = Color.DarkGray

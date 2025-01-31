@@ -269,7 +269,7 @@ private fun TopBar(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 32.dp, start = 24.dp)
+            .padding(top = 16.dp, start = 16.dp)
     ) {
         Icon(
             modifier = Modifier

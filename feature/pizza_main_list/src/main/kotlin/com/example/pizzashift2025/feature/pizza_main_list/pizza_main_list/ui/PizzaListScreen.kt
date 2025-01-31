@@ -1,11 +1,13 @@
 package com.example.pizzashift2025.feature.pizza_main_list.pizza_main_list.ui
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -17,6 +19,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -71,7 +74,10 @@ private fun ContentComponent(
     onItemClicked: (id: String) -> Unit
 ) {
     if (catalogs == null) {
-        Text(text = stringResource(id = R.string.pizza_catalog_empty))
+        Text(
+            text = stringResource(id = R.string.pizza_catalog_empty),
+            style = MaterialTheme.typography.titleLarge
+        )
         return
     }
 
@@ -109,19 +115,25 @@ private fun PizzaItemCard(
             modifier = Modifier.size(120.dp)
         )
         Spacer(modifier = Modifier.width(16.dp))
-        Column {
+        Column (
+            modifier = Modifier
+                .fillMaxHeight(),
+            verticalArrangement = Arrangement.SpaceBetween
+        ) {
             Text(
                 text = pizza.name,
-                fontSize = 18.sp
+                style = MaterialTheme.typography.bodyLarge,
+                modifier = Modifier
+                    .padding(bottom = 8.dp)
             )
             Text(
                 text = pizza.description,
-                fontSize = 14.sp,
+                style = MaterialTheme.typography.bodyMedium,
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = stringResource(id = R.string.from) + "${pizza.sizes[0].price} " + RUBLE,
-                fontSize = 16.sp
+                style = MaterialTheme.typography.labelSmall
             )
         }
     }
@@ -136,7 +148,7 @@ private fun TopBar() {
     ) {
         Text(
             text = stringResource(id = R.string.pizza),
-            fontSize = 32.sp
+            style = MaterialTheme.typography.titleLarge
         )
     }
 }
