@@ -3,9 +3,12 @@ package com.example.pizzashift2025.feature.pizza_details.ui
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Icon
@@ -18,14 +21,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import coil.compose.AsyncImage
+import com.example.pizzashift2025.component.ui.ErrorComponent
+import com.example.pizzashift2025.component.ui.LoadingComponent
 import com.example.pizzashift2025.feature.pizza_details.R
 import com.example.pizzashift2025.feature.pizza_details.presentation.PizzaDetailsState
 import com.example.pizzashift2025.feature.pizza_details.presentation.PizzaDetailsViewModel
+import com.example.pizzashift2025.shared.pizza.domain.model.CatalogItem
 
 @Composable
 fun PizzaDetailsScreen(
     viewModel: PizzaDetailsViewModel,
-    pizzaId: Int
+    pizzaId: String
 ) {
     val detailsState by viewModel.state.collectAsStateWithLifecycle()
 
@@ -53,11 +60,40 @@ fun PizzaDetailsScreen(
         }
         when(val state = detailsState){
             PizzaDetailsState.Initial,
-            PizzaDetailsState.Loading -> TODO()
+            PizzaDetailsState.Loading -> LoadingComponent()
 
-            is PizzaDetailsState.Failure -> TODO()
+            is PizzaDetailsState.Failure -> ErrorComponent(
+                message = state.message ?: stringResource(id = R.string.error_unknown_error),
+                onRetry = { viewModel.loadPizza(pizzaId) }
+            )
 
-            is PizzaDetailsState.Content -> TODO()
+            is PizzaDetailsState.Content -> PizzaDetailsContent(
+                pizzaCatalog = state.pizza
+            )
         }
+    }
+}
+
+@Composable
+private fun PizzaDetailsContent(
+    pizzaCatalog: CatalogItem
+) {
+    Column (
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    ) {
+        AsyncImage(
+            model = pizzaCatalog.img,
+            contentDescription = pizzaCatalog.name,
+            modifier = Modifier
+                .size(300.dp)
+                .padding(bottom = 16.dp)
+        )
+
+        Text(
+            text = pizzaCatalog.name,
+            modifier = Modifier.padding(bottom = 8.dp)
+        )
     }
 }

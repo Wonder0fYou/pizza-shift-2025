@@ -1,3 +1,4 @@
 <resources>
     <string name="pizza">Пицца</string>
+    <string name="error_unknown_error">Неизвестная ошибка</string>
 </resources>
