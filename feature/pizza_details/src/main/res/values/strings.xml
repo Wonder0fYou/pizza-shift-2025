@@ -1,4 +1,8 @@
 <resources>
     <string name="pizza" translatable="true">Pizza</string>
     <string name="error_unknown_error" translatable="true">Unknown error</string>
+    <string name="small" translatable="true">Small</string>
+    <string name="medium" translatable="true">Medium</string>
+    <string name="large" translatable="true">Large</string>
+    <string name="add_to_taste" translatable="true">Add to taste</string>
 </resources>

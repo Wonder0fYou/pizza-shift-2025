@@ -1,4 +1,8 @@
 <resources>
     <string name="pizza">Пицца</string>
     <string name="error_unknown_error">Неизвестная ошибка</string>
+    <string name="small">Маленькая</string>
+    <string name="medium">Средняя</string>
+    <string name="large">Большая</string>
+    <string name="add_to_taste">Add to taste</string>
 </resources>

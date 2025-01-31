@@ -1,8 +1,10 @@
 package com.example.pizzashift2025.navigation
 
 import androidx.navigation.NavController
+import com.example.pizzashift2025.util.ApplicationScope
 import javax.inject.Inject
 
+@ApplicationScope
 class GlobalRouterImpl @Inject constructor(): GlobalRouter, NavControllerHolder {
 
     private var navController: NavController? = null
