@@ -1,0 +1,4 @@
+<resources>
+    <string name="error_title" translatable="true">Error has occurred</string>
+    <string name="error_try_again" translatable="true">Error, try again</string>
+</resources>

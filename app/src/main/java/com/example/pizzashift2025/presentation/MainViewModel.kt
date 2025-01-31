@@ -13,7 +13,14 @@ class MainViewModel @Inject constructor(
         MainState(
         NavigationOption.entries,
         NavigationOption.CATALOG
-    )
-    )
+    ))
+
+    fun openOption(option: NavigationOption) {
+        _state.value = _state.value.copy(selectedNavOption = option)
+        when(option) {
+            NavigationOption.CATALOG -> router.openListPizza()
+        }
+    }
+
     val state: StateFlow<MainState> = _state
 }

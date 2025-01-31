@@ -25,15 +25,7 @@ class Converter @Inject constructor() {
             sizes = model.sizes.map { sizesDtoToDomain(it) },
             doughs = model.doughs.map { doughDtoToDomain(it) },
             calories = model.calories,
-            protein = model.protein,
             totalFat = model.totalFat,
-            carbohydrates = model.carbohydrates,
-            sodium = model.sodium,
-            allergens = model.allergens,
-            isVegetarian = model.isVegetarian,
-            isGlutenFree = model.isGlutenFree,
-            isNew = model.isNew,
-            isHit = model.isHit,
             img = BASE_URL + model.img
         )
     }

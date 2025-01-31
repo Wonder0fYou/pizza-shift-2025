@@ -1,0 +1,4 @@
+<resources>
+    <string name="error_title">Произошла ошибка</string>
+    <string name="error_try_again">Ошибка, попробуйте еще раз</string>
+</resources>

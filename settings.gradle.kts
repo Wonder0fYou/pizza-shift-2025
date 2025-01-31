@@ -25,4 +25,6 @@ include(":util")
 include(":design:resources")
 include(":shared:pizza")
 include(":feature:pizza_main_list")
+include(":feature:pizza_details")
+include(":component:ui")
  

@@ -56,6 +56,7 @@ dependencies {
     implementation(project(":design:resources"))
     implementation(project(":shared:pizza"))
     implementation(project(":feature:pizza_main_list"))
+    implementation(project(":feature:pizza_details"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

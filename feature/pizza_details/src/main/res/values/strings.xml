@@ -1,0 +1,4 @@
+<resources>
+    <string name="pizza" translatable="true">Pizza</string>
+    <string name="error_unknown_error" translatable="true">Unknown error</string>
+</resources>
