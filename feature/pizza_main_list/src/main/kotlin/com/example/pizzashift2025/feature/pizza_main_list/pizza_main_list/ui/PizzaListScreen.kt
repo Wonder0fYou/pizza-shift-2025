@@ -75,7 +75,7 @@ private fun ContentComponent(
     }
 
     LazyColumn(
-        contentPadding = PaddingValues(16.dp)
+        contentPadding = PaddingValues(12.dp)
     ) {
         items(catalogs) { pizzaItem ->
             pizzaItem.let {
@@ -131,11 +131,11 @@ private fun TopBar() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp)
+            .padding(top = 32.dp, start = 24.dp)
     ) {
         Text(
             text = stringResource(id = R.string.pizza),
-            fontSize = 24.sp
+            fontSize = 32.sp
         )
     }
 }

@@ -1,0 +1,6 @@
+<resources>
+    <string name="mozzarella" translatable="true">Mozzarella</string>
+    <string name="peperoni" translatable="true">Peperoni</string>
+    <string name="green_pepper" translatable="true">Green pepper</string>
+    <string name="mushrooms" translatable="true">Mushrooms</string>
+</resources>
