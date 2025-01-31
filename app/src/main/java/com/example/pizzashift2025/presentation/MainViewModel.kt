@@ -20,6 +20,15 @@ class MainViewModel @Inject constructor(
         _state.value = _state.value.copy(selectedNavOption = option)
         when (option) {
             NavigationOption.CATALOG -> router.openListPizza()
+            NavigationOption.ORDERS -> {
+
+            }
+            NavigationOption.CART -> {
+
+            }
+            NavigationOption.PROFILE -> {
+
+            }
         }
     }
 
