@@ -3,4 +3,6 @@
     <string name="error_unknown_error">Неизвестная ошибка</string>
     <string name="pizza">Пицца</string>
     <string name="pizza_catalog_empty">Каталог пицц пуст</string>
+
+    <string name="from">от</string>
 </resources>

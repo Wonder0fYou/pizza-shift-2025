@@ -34,6 +34,7 @@ import com.example.pizzashift2025.feature.pizza_main_list.R
 import com.example.pizzashift2025.shared.pizza.domain.model.CatalogItem
 import com.example.pizzashift2025.feature.pizza_main_list.pizza_main_list.presentation.PizzaListMainState
 import com.example.pizzashift2025.feature.pizza_main_list.pizza_main_list.presentation.PizzaListMainViewModel
+import com.example.pizzashift2025.util.Constants.RUBLE
 
 @Composable
 fun PizzaListScreen(
@@ -119,7 +120,7 @@ private fun PizzaItemCard(
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = "от ${pizza.sizes[0].price} ₽",
+                text = stringResource(id = R.string.from) + "${pizza.sizes[0].price} " + RUBLE,
                 fontSize = 16.sp
             )
         }

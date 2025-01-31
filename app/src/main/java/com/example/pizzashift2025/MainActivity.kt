@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.CompositionLocalProvider
 import com.example.pizzashift2025.navigation.GlobalRouterImpl
 import com.example.pizzashift2025.ui.PizzaMainScreen
-import com.example.pizzashift2025.ui.theme.PizzaShift2025Theme
+import com.example.pizzashift2025.design.resources.ui.theme.PizzaShift2025Theme
 import com.example.pizzashift2025.util.LocalViewModelFactory
 import com.example.pizzashift2025.util.ViewModelFactory
 import javax.inject.Inject

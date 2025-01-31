@@ -42,7 +42,11 @@ import com.example.pizzashift2025.feature.pizza_details.presentation.PizzaDetail
 import com.example.pizzashift2025.feature.pizza_details.presentation.PizzaDetailsViewModel
 import com.example.pizzashift2025.shared.pizza.domain.model.CatalogItem
 import com.example.pizzashift2025.shared.pizza.domain.model.Topping
+import com.example.pizzashift2025.util.Constants.RUBLE
+import com.example.pizzashift2025.util.model.DoughName
 import com.example.pizzashift2025.util.model.IngredientName
+import com.example.pizzashift2025.util.model.SizeName
+import com.example.pizzashift2025.util.model.ToppingName
 
 @Composable
 fun PizzaDetailsScreen(
@@ -123,13 +127,19 @@ private fun PizzaDetailsContent(
                 modifier = Modifier
                     .fillMaxWidth()
             ) {
-                Text(
-                    text = pizzaCatalog.sizes.first().name + ",",
-                    modifier = Modifier.padding(bottom = 4.dp)
-                )
-                Text(
-                    text = pizzaCatalog.doughs.first().name,
-                )
+                pizzaCatalog.sizes.forEach {
+                    val sizeName = SizeName.fromString(it.name)
+                    Text(
+                        text = stringResource(id = sizeName.displayNameResId) + ",",
+                        modifier = Modifier.padding(bottom = 4.dp)
+                    )
+                }
+                pizzaCatalog.doughs.forEach {
+                    val doughName = DoughName.fromString(it.name)
+                    Text(
+                        text = stringResource(id = doughName.displayNameResId),
+                    )
+                }
             }
         }
 
@@ -153,7 +163,6 @@ private fun PizzaDetailsContent(
                     )
                 }
             }
-            Spacer(modifier = Modifier.height(16.dp))
         }
 
         item(
@@ -195,7 +204,9 @@ private fun PizzaDetailsContent(
 @Composable
 private fun PizzaSizeSelector() {
     Row(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 16.dp, bottom = 16.dp),
         horizontalArrangement = Arrangement.SpaceAround
     ) {
         Button(
@@ -239,13 +250,14 @@ private fun PizzaIngredientItem(topping: Topping) {
                     .padding(bottom = 4.dp)
             )
 
+            val toppingName = ToppingName.fromString(topping.name)
             Text(
-                text = topping.name,
+                text = stringResource(id = toppingName.displayNameResId),
                 modifier = Modifier.padding(horizontal = 4.dp)
             )
 
             Text(
-                text = "${topping.cost} P",
+                text = "${topping.cost} " + RUBLE,
             )
 
         }
