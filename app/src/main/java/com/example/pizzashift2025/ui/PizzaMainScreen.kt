@@ -17,7 +17,10 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
 import com.example.pizzashift2025.R
+import com.example.pizzashift2025.feature.pizza_details.PizzaDetailsRoute
+import com.example.pizzashift2025.feature.pizza_details.ui.PizzaDetailsScreen
 import com.example.pizzashift2025.feature.pizza_main_list.pizza_main_list.MainListRoute
 import com.example.pizzashift2025.feature.pizza_main_list.pizza_main_list.ui.PizzaListScreen
 import com.example.pizzashift2025.presentation.MainViewModel
@@ -39,6 +42,14 @@ fun PizzaMainScreen() {
                 composable<MainListRoute> {
                     PizzaListScreen(
                         viewModel = getViewModel()
+                    )
+                }
+                composable<PizzaDetailsRoute> {
+                    val destination = it.toRoute<PizzaDetailsRoute>()
+                    val pizzaId = destination.pizzaId
+                    PizzaDetailsScreen(
+                        viewModel = getViewModel(),
+                        pizzaId = pizzaId
                     )
                 }
             }

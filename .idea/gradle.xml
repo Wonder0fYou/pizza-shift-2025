@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/design" />
             <option value="$PROJECT_DIR$/design/resources" />
             <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/pizza_details" />
             <option value="$PROJECT_DIR$/feature/pizza_main_list" />
             <option value="$PROJECT_DIR$/shared" />
             <option value="$PROJECT_DIR$/shared/pizza" />
