@@ -132,7 +132,7 @@ private fun TopBar() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 32.dp, start = 24.dp)
+            .padding(top = 16.dp, start = 24.dp)
     ) {
         Text(
             text = stringResource(id = R.string.pizza),

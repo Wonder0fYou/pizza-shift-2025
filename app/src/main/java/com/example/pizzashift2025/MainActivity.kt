@@ -26,7 +26,6 @@ class MainActivity : ComponentActivity() {
         val appComponent = (application as PizzaApplication).appComponent
         appComponent.inject(this)
 
-        enableEdgeToEdge()
         setContent {
             CompositionLocalProvider(LocalViewModelFactory provides viewModelFactory) {
                 PizzaShift2025Theme {

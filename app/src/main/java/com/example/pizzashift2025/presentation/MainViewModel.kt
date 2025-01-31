@@ -15,15 +15,16 @@ class MainViewModel @Inject constructor(
             NavigationOption.CATALOG
         )
     )
+    val state: StateFlow<MainState> = _state
 
     fun openOption(option: NavigationOption) {
         _state.value = _state.value.copy(selectedNavOption = option)
         when (option) {
             NavigationOption.CATALOG -> router.openListPizza()
-            NavigationOption.ORDERS -> {
+            NavigationOption.ORDERS  -> {
 
             }
-            NavigationOption.CART -> {
+            NavigationOption.CART    -> {
 
             }
             NavigationOption.PROFILE -> {
@@ -35,6 +36,4 @@ class MainViewModel @Inject constructor(
     fun handleOpenedScreen(option: NavigationOption?) {
         _state.value = _state.value.copy(selectedNavOption = option)
     }
-
-    val state: StateFlow<MainState> = _state
 }

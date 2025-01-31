@@ -1,6 +1,11 @@
 package com.example.pizzashift2025.ui
 
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.material.icons.filled.CheckCircle
@@ -9,13 +14,12 @@ import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -97,32 +101,50 @@ private fun BottomNavigation(
     selectedNavigationOption: NavigationOption?,
     onItemClicked: (NavigationOption) -> Unit
 ) {
-    NavigationBar {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp),
+        horizontalArrangement = Arrangement.SpaceAround,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
         for (option in navigationOption) {
             NavigationBarItem(
+                option = option,
                 selected = selectedNavigationOption == option,
-                onClick = { onItemClicked(option) },
-                icon = {
-                    Icon(
-                        imageVector = navOptionIcon(option),
-                        contentDescription = "",
-                        tint = if (selectedNavigationOption == option)
-                            MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.tertiary
-                    )
-                },
-                label = {
-                    Text(
-                        text = navOptionLabel(option = option),
-                        style = MaterialTheme.typography.labelSmall,
-                        color = if (selectedNavigationOption == option)
-                            MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.tertiary
-                    )
-                })
+                onClick = { onItemClicked(option) }
+            )
         }
     }
 }
 
-private fun navOptionIcon(option: NavigationOption): ImageVector =
+@Composable
+private fun NavigationBarItem(
+    option: NavigationOption,
+    selected: Boolean,
+    onClick: () -> Unit
+) {
+    Column(
+        modifier = Modifier
+            .clickable(onClick = onClick)
+            .padding(8.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Icon(
+            imageVector = getNavigationOptionIcon(option),
+            contentDescription = getNavigationOptionLabel(option = option),
+            tint = if (selected) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.tertiary
+        )
+        Text(
+            text = getNavigationOptionLabel(option = option),
+            style = MaterialTheme.typography.labelSmall,
+            color = if (selected) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.tertiary
+        )
+    }
+}
+
+private fun getNavigationOptionIcon(option: NavigationOption): ImageVector =
     when (option) {
         NavigationOption.CATALOG -> Icons.Default.List
         NavigationOption.ORDERS -> Icons.Default.CheckCircle
@@ -131,7 +153,7 @@ private fun navOptionIcon(option: NavigationOption): ImageVector =
     }
 
 @Composable
-private fun navOptionLabel(option: NavigationOption): String = stringResource(
+private fun getNavigationOptionLabel(option: NavigationOption): String = stringResource(
     when (option) {
         NavigationOption.CATALOG -> R.string.pizza
         NavigationOption.ORDERS -> R.string.orders
