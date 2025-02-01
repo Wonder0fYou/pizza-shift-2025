@@ -25,15 +25,29 @@ val Typography = Typography(
     ),
     bodyMedium = TextStyle( // Стиль для описаний
         fontFamily = FontFamily.Default,
-        fontSize = 14.sp,
+        fontSize = 16.sp,
         lineHeight = 20.sp,
         letterSpacing = 0.25.sp,
         color = Grey
     ),
+    labelLarge = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.W600,
+        fontSize = 24.sp,
+        letterSpacing = 0.5.sp,
+        color = Color.White
+    ),
+    labelMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.W600,
+        fontSize = 15.sp,
+        letterSpacing = 0.5.sp,
+        color = Color.DarkGray
+    ),
     labelSmall = TextStyle( // Стиль для цен и подписей
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Bold,
-        fontSize = 14.sp,
+        fontSize = 12.sp,
         letterSpacing = 0.5.sp,
         color = Color.DarkGray
     )

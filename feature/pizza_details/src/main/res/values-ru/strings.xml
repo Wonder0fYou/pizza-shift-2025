@@ -10,4 +10,9 @@
 
     <string name="into_a_basket">В корзину</string>
 
+    <string name="thin">Тонкое</string>
+    <string name="thick">Толстое</string>
+
+    <string name="sizes">Выбрать размер</string>
+    <string name="dough">Выбрать тесто</string>
 </resources>
