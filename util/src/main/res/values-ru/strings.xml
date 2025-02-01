@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mozzarella">Моцарелла</string>
+    <string name="peperoni">Пепперони</string>
+    <string name="green_pepper">Зеленый перец</string>
+    <string name="mushrooms">Грибы</string>
+
+    <string name="pineapple">Ананас</string>
+    <string name="bacon">Бекон</string>
+    <string name="shrimps">Креветки</string>
+    <string name="ham">Ветчина</string>
+    <string name="chicken_fillet">Куриное филе</string>
+    <string name="onion">Лук</string>
+    <string name="basil">Базилик</string>
+    <string name="chile">Перец чили</string>
+    <string name="cheddar">Чеддер</string>
+    <string name="meatballs">Фрикадельки</string>
+    <string name="pickle">Маринованный огурец</string>
+    <string name="tomato">Томат</string>
+    <string name="feta">Фета</string>
+
+    <string name="size_small">Маленькая</string>
+    <string name="size_medium">Средняя</string>
+    <string name="size_large">Большая</string>
+
+    <string name="dough_thin">Тонкое</string>
+    <string name="dough_thick">Толстое</string>
+</resources>

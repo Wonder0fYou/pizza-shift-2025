@@ -7,20 +7,33 @@ import javax.inject.Inject
 
 class MainViewModel @Inject constructor(
     private val router: MainRouter
-): ViewModel() {
+) : ViewModel() {
 
     private val _state = MutableStateFlow(
         MainState(
-        NavigationOption.entries,
-        NavigationOption.CATALOG
-    ))
+            NavigationOption.entries,
+            NavigationOption.CATALOG
+        )
+    )
+    val state: StateFlow<MainState> = _state
 
     fun openOption(option: NavigationOption) {
         _state.value = _state.value.copy(selectedNavOption = option)
-        when(option) {
+        when (option) {
             NavigationOption.CATALOG -> router.openListPizza()
+            NavigationOption.ORDERS  -> {
+
+            }
+            NavigationOption.CART    -> {
+
+            }
+            NavigationOption.PROFILE -> {
+
+            }
         }
     }
 
-    val state: StateFlow<MainState> = _state
+    fun handleOpenedScreen(option: NavigationOption?) {
+        _state.value = _state.value.copy(selectedNavOption = option)
+    }
 }

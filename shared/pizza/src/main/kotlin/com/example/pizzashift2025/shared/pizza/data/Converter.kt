@@ -34,7 +34,7 @@ class Converter @Inject constructor() {
         return Ingredient(
             name = model.name,
             cost = model.cost,
-            img = model.img
+            img = BASE_URL + model.img
         )
     }
 
@@ -42,7 +42,7 @@ class Converter @Inject constructor() {
         return Topping(
             name = model.name,
             cost = model.cost,
-            img = model.img
+            img = BASE_URL + model.img
         )
     }
 

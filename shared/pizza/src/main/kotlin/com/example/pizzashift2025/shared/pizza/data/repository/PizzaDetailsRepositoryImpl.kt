@@ -14,6 +14,6 @@ class PizzaDetailsRepositoryImpl @Inject constructor(
         val catalog = api.getAllPizzaList().catalog.map { dto ->
             converter.catalogItemDtoToDomain(dto)
         }
-        return catalog[id.toInt()]
+        return catalog[id.toInt()-1]
     }
 }

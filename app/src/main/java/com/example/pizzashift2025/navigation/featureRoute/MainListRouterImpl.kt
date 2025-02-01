@@ -9,8 +9,6 @@ class MainListRouterImpl @Inject constructor(
     private val globalRouter: GlobalRouter
 ): MainListRouter {
     override fun openPizza(id: String) {
-        if (id != null) {
-            globalRouter.open(PizzaDetailsRoute(id))
-        }
+        globalRouter.open(PizzaDetailsRoute(id))
     }
 }

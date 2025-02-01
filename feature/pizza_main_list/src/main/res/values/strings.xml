@@ -3,4 +3,6 @@
     <string name="error_unknown_error" translatable="true">Unknown error</string>
     <string name="pizza" translatable="true">Pizza</string>
     <string name="pizza_catalog_empty" translatable="true">Pizza catalog is empty</string>
+
+    <string name="from" translatable="true">from</string>
 </resources>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="mozzarella" translatable="true">Mozzarella</string>
+    <string name="peperoni" translatable="true">Peperoni</string>
+    <string name="green_pepper" translatable="true">Green pepper</string>
+    <string name="mushrooms" translatable="true">Mushrooms</string>
+
+    <string name="pineapple" translatable="true">Pineapple</string>
+    <string name="bacon" translatable="true">Bacon</string>
+    <string name="shrimps" translatable="true">Shrimps</string>
+    <string name="ham" translatable="true">Ham</string>
+    <string name="chicken_fillet" translatable="true">Chicken fillet</string>
+    <string name="onion" translatable="true">Onion</string>
+    <string name="basil" translatable="true">Basil</string>
+    <string name="chile" translatable="true">Chile</string>
+    <string name="cheddar" translatable="true">Cheddar</string>
+    <string name="meatballs" translatable="true">Meatballs</string>
+    <string name="pickle" translatable="true">Pickle</string>
+    <string name="tomato" translatable="true">Tomato</string>
+    <string name="feta" translatable="true">Feta</string>
+
+    <string name="size_small">Small</string>
+    <string name="size_medium">Medium</string>
+    <string name="size_large">Large</string>
+
+    <string name="dough_thin">Thin</string>
+    <string name="dough_thick">Thick</string>
+</resources>
