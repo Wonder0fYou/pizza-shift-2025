@@ -6,16 +6,19 @@ import com.example.pizzashift2025.shared.pizza.domain.usecase.GetCurrentPizzaDet
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class PizzaDetailsViewModel @Inject constructor(
     private val router: PizzaDetailsRouter,
     private val getCurrentPizzaDetails: GetCurrentPizzaDetails,
-): ViewModel() {
+) : ViewModel() {
 
     private val _state = MutableStateFlow<PizzaDetailsState>(PizzaDetailsState.Initial)
     val state: StateFlow<PizzaDetailsState> = _state
+
+    private val _pizzaOrderState = MutableStateFlow(PizzaOrderState())
 
     fun loadPizza(pizzaId: String) {
         if (_state.value is PizzaDetailsState.Content || _state.value is PizzaDetailsState.Loading) {
@@ -32,6 +35,38 @@ class PizzaDetailsViewModel @Inject constructor(
                 throw ex
             } catch (e: Exception) {
                 _state.value = PizzaDetailsState.Failure(e.message)
+            }
+        }
+    }
+
+    fun onAction(action: DetailsUserAction) {
+        when (action) {
+            is DetailsUserAction.SelectSize -> {
+                _pizzaOrderState.update {
+                    _pizzaOrderState.value.copy(size = action.size)
+                }
+            }
+
+            is DetailsUserAction.SelectDough -> {
+                _pizzaOrderState.update {
+                    _pizzaOrderState.value.copy(dough = action.dough)
+                }
+            }
+
+            is DetailsUserAction.ToggleTopping -> {
+                _pizzaOrderState.update { currentState ->
+                    val currentToppings = currentState.toppings.toMutableList()
+                    if (currentToppings.contains(action.topping)) {
+                        currentToppings.remove(action.topping)
+                    } else {
+                        currentToppings.add(action.topping)
+                    }
+                    currentState.copy(toppings = currentToppings.toList())
+                }
+            }
+
+            is DetailsUserAction.InBasket -> {
+
             }
         }
     }
