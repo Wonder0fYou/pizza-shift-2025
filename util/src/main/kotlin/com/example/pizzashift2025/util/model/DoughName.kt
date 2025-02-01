@@ -11,7 +11,7 @@ enum class DoughName(
     companion object {
         fun fromString(doughName: String): DoughName {
             return when (doughName) {
-                "THIN" -> THIN
+                "THIN"  -> THIN
                 "THICK" -> THICK
                 else -> throw IllegalArgumentException("Unknown dough type: $doughName")
             }

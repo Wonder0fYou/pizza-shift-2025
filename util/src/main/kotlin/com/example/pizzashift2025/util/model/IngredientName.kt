@@ -21,28 +21,31 @@ enum class IngredientName(
     MEATBALLS(R.string.meatballs),
     PICKLE(R.string.pickle),
     TOMATO(R.string.tomato),
-    FETA(R.string.feta);
+    FETA(R.string.feta),
+    PARMESAN(R.string.parmesan);
+
 
     companion object {
         fun fromString(ingredient: String): IngredientName {
             return when(ingredient) {
-                "PINEAPPLE" -> PINEAPPLE
-                "GREEN_PEPPER" -> GREEN_PEPPER
-                "MUSHROOMS" -> MUSHROOMS
-                "BACON" -> BACON
-                "SHRIMPS" -> SHRIMPS
-                "HAM" -> HAM
-                "MOZZARELLA" -> MOZZARELLA
-                "PEPERONI" -> PEPERONI
+                "PINEAPPLE"      -> PINEAPPLE
+                "GREEN_PEPPER"   -> GREEN_PEPPER
+                "MUSHROOMS"      -> MUSHROOMS
+                "BACON"          -> BACON
+                "SHRIMPS"        -> SHRIMPS
+                "HAM"            -> HAM
+                "MOZZARELLA"     -> MOZZARELLA
+                "PEPERONI"       -> PEPERONI
                 "CHICKEN_FILLET" -> CHICKEN_FILLET
-                "ONION" -> ONION
-                "BASIL" -> BASIL
-                "CHILE" -> CHILE
-                "CHEDDAR" -> CHEDDAR
-                "MEATBALLS" -> MEATBALLS
-                "PICKLE" -> PICKLE
-                "TOMATO" -> TOMATO
-                "FETA" -> FETA
+                "ONION"          -> ONION
+                "BASIL"          -> BASIL
+                "CHILE"          -> CHILE
+                "CHEDDAR"        -> CHEDDAR
+                "MEATBALLS"      -> MEATBALLS
+                "PICKLE"         -> PICKLE
+                "TOMATO"         -> TOMATO
+                "FETA"           -> FETA
+                "PARMESAN"       -> PARMESAN
                 else -> throw IllegalArgumentException("Unknown ingredient: $ingredient")
             }
         }

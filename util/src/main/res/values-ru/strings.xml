@@ -25,4 +25,6 @@
 
     <string name="dough_thin">Тонкое</string>
     <string name="dough_thick">Толстое</string>
+
+    <string name="parmesan" translatable="true">Пармезан</string>
 </resources>

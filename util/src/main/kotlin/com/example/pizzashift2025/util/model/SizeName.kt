@@ -12,9 +12,9 @@ enum class SizeName(
     companion object {
         fun fromString(sizeName: String): SizeName {
             return when (sizeName) {
-                "SMALL" -> SMALL
+                "SMALL"  -> SMALL
                 "MEDIUM" -> MEDIUM
-                "LARGE" -> LARGE
+                "LARGE"  -> LARGE
                 else -> throw IllegalArgumentException("Unknown pizza size: $sizeName")
             }
         }

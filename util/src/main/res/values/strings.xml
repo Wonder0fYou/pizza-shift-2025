@@ -24,4 +24,6 @@
 
     <string name="dough_thin">Thin</string>
     <string name="dough_thick">Thick</string>
+
+    <string name="parmesan" translatable="true">Parmesan</string>
 </resources>
